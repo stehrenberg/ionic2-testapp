@@ -9,7 +9,6 @@ import {Nav, App} from "ionic-angular";
 export class PizzaAppComponent {
 
   @ViewChild(Nav) nav: Nav;
-
   rootPage: any = OrderComponent;
 
   constructor(private app: App) {

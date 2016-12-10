@@ -16,14 +16,17 @@
       To The Bottom!
     </button>
   </ion-buttons>
-  <div style="height: 2000px">
-    <b>Hello</b> World!
-  </div>
+  <ion-list>
+    <ion-item *ngFor="let pizza of pizzas">
+      {{pizza.name}}
+    </ion-item>
+  </ion-list>
   <ion-buttons end>
     <button ion-button (click)="scrollToTop()">
       To The Top!
     </button>
   </ion-buttons>
+
 
 </ion-content>
 

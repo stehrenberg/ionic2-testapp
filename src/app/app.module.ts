@@ -3,6 +3,7 @@ import { IonicApp, IonicModule, IonicErrorHandler } from 'ionic-angular';
 import {PizzaAppComponent} from "./app.component";
 import {OrderComponent} from "../pages/order/order.component";
 import {AboutComponent} from "../pages/about/about.component";
+import {PizzaService} from "../providers/pizza.service";
 
 @NgModule({
   declarations: [
@@ -18,6 +19,6 @@ import {AboutComponent} from "../pages/about/about.component";
     OrderComponent,
     AboutComponent
   ],
-  providers: [{provide: ErrorHandler, useClass: IonicErrorHandler}]
+  providers: [PizzaService, {provide: ErrorHandler, useClass: IonicErrorHandler}]
 })
 export class AppModule {}
