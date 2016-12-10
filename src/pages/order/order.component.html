@@ -1,0 +1,36 @@
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle icon-only>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title text-center>Pizza Äpp!</ion-title>
+  </ion-navbar>
+  <ion-toolbar position="top">
+    <ion-searchbar>Such dir was aus!</ion-searchbar>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-buttons start>
+    <button ion-button (click)="scrollToBottom()">
+      To The Bottom!
+    </button>
+  </ion-buttons>
+  <div style="height: 2000px">
+    <b>Hello</b> World!
+  </div>
+  <ion-buttons end>
+    <button ion-button (click)="scrollToTop()">
+      To The Top!
+    </button>
+  </ion-buttons>
+
+</ion-content>
+
+<ion-footer>
+  <ion-buttons right>
+    <button ion-button primary round icon-only (click)="openAbout()">
+      <ion-icon name="arrow-forward"></ion-icon>
+    </button>
+  </ion-buttons>
+</ion-footer>

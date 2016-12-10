@@ -1,20 +1,22 @@
 import { NgModule, ErrorHandler } from '@angular/core';
 import { IonicApp, IonicModule, IonicErrorHandler } from 'ionic-angular';
-import { MyApp } from './app.component';
-import { HomePage } from '../pages/home/home';
+import {PizzaAppComponent} from "./app.component";
+import {OrderComponent} from "../pages/order/order.component";
+import {AboutComponent} from "../pages/about/about.component";
 
 @NgModule({
   declarations: [
-    MyApp,
-    HomePage
+    OrderComponent,
+    PizzaAppComponent,
+    AboutComponent
   ],
   imports: [
-    IonicModule.forRoot(MyApp)
+    IonicModule.forRoot(PizzaAppComponent)
   ],
   bootstrap: [IonicApp],
   entryComponents: [
-    MyApp,
-    HomePage
+    OrderComponent,
+    AboutComponent
   ],
   providers: [{provide: ErrorHandler, useClass: IonicErrorHandler}]
 })
