@@ -3,6 +3,8 @@ import {Content, NavController, MenuController, LoadingController} from "ionic-a
 import {AboutComponent} from "../about/index";
 import {PizzaService} from "../../providers/pizza.service";
 import {Pizza} from "../../models/pizza.model";
+import {CartComponent} from "../cart/cart.component";
+import {CartService} from "../../providers/cart.service";
 
 @Component({
   templateUrl: 'order.component.html'
@@ -11,15 +13,16 @@ import {Pizza} from "../../models/pizza.model";
 export class OrderComponent implements OnInit {
 
   @ViewChild(Content) content: Content;
-  aboutComponent = AboutComponent;
-  pizzas: Pizza[] = [];
+  private aboutComponent = AboutComponent;
+  private pizzas: Pizza[] = [];
 
   constructor(
     private nav: NavController,
     private menuCtrl: MenuController,
     private loadingCtrl: LoadingController,
-    private pizzaService: PizzaService) {
-
+    private pizzaService: PizzaService,
+    private cartService: CartService
+  ) {
     menuCtrl = menuCtrl;
   }
 
@@ -42,6 +45,14 @@ export class OrderComponent implements OnInit {
 
   openAbout() {
     this.nav.push(AboutComponent);
+  }
+
+  openCart() {
+    this.nav.push(CartComponent);
+  }
+
+  addToCart(pizza: Pizza) {
+    this.cartService.addToCart(pizza);
   }
 
   presentLoading() {

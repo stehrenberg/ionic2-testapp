@@ -4,6 +4,11 @@
       <ion-icon name="menu"></ion-icon>
     </button>
     <ion-title text-center>Pizza Äpp!</ion-title>
+    <ion-buttons right>
+      <button ion-button primary icon-only (click)="openCart()">
+        <ion-icon name="cart"></ion-icon>
+      </button>
+    </ion-buttons>
   </ion-navbar>
   <ion-toolbar position="top">
     <ion-searchbar>Such dir was aus!</ion-searchbar>
@@ -24,6 +29,10 @@
       <span item-left text-left>{{pizza.id}}</span>
       <h2>{{pizza.name}}</h2>
       <p>{{pizza.price | currency: 'EUR'}}</p>
+        <button ion-button primary outline item-right icon-only (click)="addToCart(pizza)">
+          <ion-icon name="cart">
+          </ion-icon>
+        </button>
     </ion-item>
   </ion-list>
   <ion-buttons end>
