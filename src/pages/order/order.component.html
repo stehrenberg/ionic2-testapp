@@ -10,15 +10,20 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content padding>
+<ion-content class="order" padding>
   <ion-buttons start>
     <button ion-button (click)="scrollToBottom()">
       To The Bottom!
     </button>
   </ion-buttons>
   <ion-list>
+    <ion-list-header>
+      Unsere Pizzen
+    </ion-list-header>
     <ion-item *ngFor="let pizza of pizzas">
-      {{pizza.name}}
+      <span item-left text-left>{{pizza.id}}</span>
+      <h2>{{pizza.name}}</h2>
+      <p>{{pizza.price | currency: 'EUR'}}</p>
     </ion-item>
   </ion-list>
   <ion-buttons end>
