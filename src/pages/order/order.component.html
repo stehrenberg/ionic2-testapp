@@ -16,6 +16,14 @@
 </ion-header>
 
 <ion-content class="order" padding>
+  <ion-refresher (ionRefresh)="doRefresh($event)">
+    <ion-refresher-content
+      pullingText="Aktualisiere Angebot..."
+      pullingIcon="american-football"
+      refreshingSpinner="bubbles"
+    >
+    </ion-refresher-content>
+  </ion-refresher>
   <ion-buttons start>
     <button ion-button (click)="scrollToBottom()">
       To The Bottom!
@@ -25,7 +33,7 @@
     <ion-list-header>
       Unsere Pizzen
     </ion-list-header>
-    <ion-item *ngFor="let pizza of pizzas">
+    <ion-item *ngFor="let pizza of pizzas" (click)="openDetailPage(pizza.id)">
       <span item-left text-left>{{pizza.id}}</span>
       <h2>{{pizza.name}}</h2>
       <p>{{pizza.price | currency: 'EUR'}}</p>

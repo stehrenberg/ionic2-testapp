@@ -1,10 +1,17 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>$Title$</title>
-</head>
-<body>
-$END$
-</body>
-</html>
+<ion-header>
+  <ion-navbar>
+    <ion-title>Details zur {{pizza?.name}}</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+  <ion-card>
+    <ion-card-content>
+      <ion-card-title>{{pizza?.name}}</ion-card-title>
+      <ion-avatar item-left>
+        <img src="assets/img/pizza.jpg">
+      </ion-avatar>
+      <p>Die {{pizza?.name}} ist in unserem Angebot die Nummer {{pizza?.id}}.</p>
+    </ion-card-content>
+  </ion-card>
+</ion-content>

@@ -6,13 +6,15 @@ import {AboutComponent} from "../pages/about/about.component";
 import {CartComponent} from "../pages/cart/cart.component";
 import {PizzaService} from "../providers/pizza.service";
 import {CartService} from "../providers/cart.service";
+import {DetailComponent} from "../pages/detail/detail.component";
 
 @NgModule({
   declarations: [
     OrderComponent,
     PizzaAppComponent,
     AboutComponent,
-    CartComponent
+    CartComponent,
+    DetailComponent
   ],
   imports: [
     IonicModule.forRoot(PizzaAppComponent)
@@ -21,7 +23,8 @@ import {CartService} from "../providers/cart.service";
   entryComponents: [
     OrderComponent,
     AboutComponent,
-    CartComponent
+    CartComponent,
+    DetailComponent
   ],
   providers: [PizzaService, CartService, {provide: ErrorHandler, useClass: IonicErrorHandler}]
 })
